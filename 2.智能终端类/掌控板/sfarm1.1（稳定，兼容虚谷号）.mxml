@@ -1,0 +1,673 @@
+<!--mPythonType:0-->
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="vtBqs(W=-@.}k=hI8Fwc">a</variable>
+    <variable id="2j6l@@u;Sy3zUR4RaI9R">cnt</variable>
+    <variable id="e6*(h^`0A4s36;`zgqw~">relay</variable>
+  </variables>
+  <block type="mpython_display_fill" id="Z:7Vz`:j4eRiL0TE;ruF" x="13" y="-12">
+    <field name="display_fill">fill(0)</field>
+    <next>
+      <block type="mpython_init_wifi" id="*Hq8Oc(gNwxS:FT?9V^+">
+        <value name="ssid">
+          <shadow type="text" id="?g:F{S.!+R3PsYvrKE0j">
+            <field name="TEXT">makerspace</field>
+          </shadow>
+        </value>
+        <value name="password">
+          <shadow type="text" id="n*|X:FB2]5sA,Zg;og.1">
+            <field name="TEXT">m@kersp@ce</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="mpython_display_DispChar_5lines" id="EzDrmu{jURV(!qt^[IX;">
+            <field name="TEXTMODE">1</field>
+            <field name="AUTORETURN">False</field>
+            <value name="DispChar_5lines">
+              <shadow type="mpython_4_lines" id="?iM=T0c8EI/=nZK![Msn">
+                <field name="mpython_4_lines">1</field>
+              </shadow>
+            </value>
+            <value name="message">
+              <shadow type="text" id="p{RY6y020MXu*K=0}TZQ">
+                <field name="TEXT">Wi-Fi连接成功</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_display_Show" id="bHbdz-xQr:C3KJ{x=^gL">
+                <next>
+                  <block type="mpython_siot_connect" id="AOyP~xvx9CC`3/T$GsIu">
+                    <value name="SERVER">
+                      <shadow type="text" id="qzwNhb0J/`9YwH2dI4:8">
+                        <field name="TEXT">192.168.3.136</field>
+                      </shadow>
+                    </value>
+                    <value name="IOT_USER">
+                      <shadow type="text" id="3|E)DP0^U%u=RGM3{Jrb">
+                        <field name="TEXT">scope</field>
+                      </shadow>
+                    </value>
+                    <value name="IOT_PWD">
+                      <shadow type="text" id="*P1Rahbp[s8g[E+^yOn=">
+                        <field name="TEXT">scope</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="7|9kypHopx!GdoOz$`,o">
+                        <value name="IF0">
+                          <block type="mpython_siot_isconnected" id="O|F^quwbEBnAQP(lv(1G"></block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="mpython_siot_subscribe" id="(9`70iq,}j*oDqds*$q*">
+                            <mutation xmlns="http://www.w3.org/1999/xhtml" items="4"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="]G.g,Ejto*aTieQAs.Z7">
+                                <field name="TEXT">sf88/light</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="text" id="[iM`nu.FXd+N3I}W5CM$">
+                                <field name="TEXT">sf88/soil</field>
+                              </block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="text" id="YF0j,42GYk26UMhe:zSD">
+                                <field name="TEXT">sf88/relay</field>
+                              </block>
+                            </value>
+                            <value name="ADD3">
+                              <block type="text" id="hs`tQYV3+Sos^3S*dupC">
+                                <field name="TEXT">sf88/info</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="mpython_display_DispChar_5lines" id="bKV4%.dKb+JluHy$pVGH">
+                                <field name="TEXTMODE">1</field>
+                                <field name="AUTORETURN">False</field>
+                                <value name="DispChar_5lines">
+                                  <shadow type="mpython_4_lines" id="gkUyTzw$3_Vtm_cvo61-">
+                                    <field name="mpython_4_lines">2</field>
+                                  </shadow>
+                                </value>
+                                <value name="message">
+                                  <shadow type="text" id="w!FJP3e9*{Ag{dYh9cHV">
+                                    <field name="TEXT">MQTT连接成功</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="mpython_display_Show" id="?M=|OGC[FU0S1wTlfp;4"></block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="variables_set" id="g5/pwUgRn{lN5RUvoUKx">
+                            <field name="VAR" id="e6*(h^`0A4s36;`zgqw~">relay</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="|lEbCcFL|6H~Nn#,U#j,">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="bC-wPqW{-y%^()aMuI^t">
+                                <field name="VAR" id="2j6l@@u;Sy3zUR4RaI9R">cnt</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="A52IfFfE0K$G*/6=wOos">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="mpython_custom_event" id="R4=b5Wb{!*U()mmBzP,2">
+                                    <value name="index">
+                                      <shadow type="mpython_event_option" id="F7PPp/EYT1w]+V*n5fI*">
+                                        <field name="Timer_num">10</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="condition">
+                                      <block type="logic_operation" id=")QFFHKE$mhm0`K1etWd*">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                          <block type="logic_compare" id="bv*yg~E%g7*6cDQ[CyTl">
+                                            <field name="OP">GT</field>
+                                            <value name="A">
+                                              <block type="mpython_read_analog" id=",-;!5[0qu35NYl+dd-;n">
+                                                <value name="allPin">
+                                                  <shadow type="read_analog_pin" id="$nB](VzAZ,T]YsIF!m9}">
+                                                    <field name="read_analog_pin">1</field>
+                                                  </shadow>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="_-(~fxXZN-UVLEG[|Cc0">
+                                                <field name="NUM">2000</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="logic_compare" id="!G9*ox;6dKl{z}aG6$LN">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="u.X%dd)XtKY`[=1P+%Uk">
+                                                <field name="VAR" id="e6*(h^`0A4s36;`zgqw~">relay</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="^1tv{QE4v/d39DnAa8Sb">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="variables_set" id="KiW-/}PT}c?$VBJ37-q7">
+                                        <field name="VAR" id="e6*(h^`0A4s36;`zgqw~">relay</field>
+                                        <value name="VALUE">
+                                          <block type="math_number" id="JP(0;379v*I_*7!FBYUL">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="mpython_bluebit_set_true" id="!,.OP(`;VC8,+El!8FAO">
+                                            <field name="set_digital_senor">RELAY</field>
+                                            <value name="set_digital_P">
+                                              <shadow type="set_digital" id="=PO)Xe+UhMA]FDKc*PsR">
+                                                <field name="set_digital">8</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="text_print" id="wu7=/59`~#yRJ9X,Sl0n">
+                                                <value name="TEXT">
+                                                  <shadow type="text" id="RKE@F(RIJgXP1Z{,T*0A">
+                                                    <field name="TEXT">浇水</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="mpython_clear_dispchar_5lines" id="*H?Bl!ExRbeNu-t.L`p2">
+                                                    <value name="DispChar_5lines">
+                                                      <shadow type="mpython_4_lines" id="}KV~_!Swqf,U,!2ulkkZ">
+                                                        <field name="mpython_4_lines">4</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <next>
+                                                      <block type="mpython_display_DispChar_5lines" id="q!Ny`qF!fjb`bGx^{:v5">
+                                                        <field name="TEXTMODE">1</field>
+                                                        <field name="AUTORETURN">False</field>
+                                                        <value name="DispChar_5lines">
+                                                          <shadow type="mpython_4_lines" id="hVOR/3RI%:zio^0Y+^KH">
+                                                            <field name="mpython_4_lines">4</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="message">
+                                                          <shadow type="text" id="}8Q[Pp1%;/xflFw)=S_U">
+                                                            <field name="TEXT">自动浇水</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <next>
+                                                          <block type="mpython_display_Show" id="zIEbd{_oopwFR];HlxcX">
+                                                            <next>
+                                                              <block type="mpython_sleep_ms" id="jSV[A6Q[QBcTP;X)]i9*">
+                                                                <field name="ms_us">s</field>
+                                                                <value name="duration">
+                                                                  <shadow type="math_number" id="$rSF]dxWGiS|gM/!0enS">
+                                                                    <field name="NUM">5</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="mpython_clear_dispchar_5lines" id="3qqY`zU^gx~tujkmsJR2">
+                                                                    <value name="DispChar_5lines">
+                                                                      <shadow type="mpython_4_lines" id="?vN!hUufDK{0/twEziXN">
+                                                                        <field name="mpython_4_lines">4</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="mpython_display_Show" id="bN!5l,#eo+;b6jfK#vXy">
+                                                                        <next>
+                                                                          <block type="mpython_bluebit_set_false" id="K?u5fS4h7[JogC/.BaA-">
+                                                                            <field name="set_digital_senor">RELAY</field>
+                                                                            <value name="set_digital_P">
+                                                                              <shadow type="set_digital" id="eFX6~X01lWhCcr}*QPy$">
+                                                                                <field name="set_digital">8</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="variables_set" id="u_A-~X58BX_L5znJ0J||">
+                                                                                <field name="VAR" id="e6*(h^`0A4s36;`zgqw~">relay</field>
+                                                                                <value name="VALUE">
+                                                                                  <block type="math_number" id="|GY!y@.XAe9RAuKO7wS0">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="mpython_run_thread" id="c7/A2%}@@U#M`;!|,yw(">
+                                        <field name="THREAD">1</field>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="mpython_siot_receive" id="#N],:?/~^r_]6W@.o3a7" x="812" y="-12">
+    <field name="TOPIC">3</field>
+    <statement name="DO">
+      <block type="variables_set" id="!U@PsXr+|FxCE3bKl.3x">
+        <field name="VAR" id="vtBqs(W=-@.}k=hI8Fwc">a</field>
+        <value name="VALUE">
+          <block type="mpython_siot_message" id="eyhH~:@5Ap#O`w]~,XIS"></block>
+        </value>
+        <next>
+          <block type="controls_if" id=":EL+!?]x{V}%kH/OX7({">
+            <value name="IF0">
+              <block type="logic_operation" id="0]t?~6z(l;k]uB!J(*+v">
+                <field name="OP">AND</field>
+                <value name="A">
+                  <block type="logic_compare" id="KGC}e?Wy[2ClG1!_rxK+">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="math_convert" id="ecR*M`~f^aKkUzoH[qX*">
+                        <field name="TYPE0">int</field>
+                        <value name="INPUT0">
+                          <block type="variables_get" id="8/Wo3^%EnOtNbfIONog:">
+                            <field name="VAR" id="vtBqs(W=-@.}k=hI8Fwc">a</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="[p;7|6ws=$Vs!)omydFP">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id="SQVJ5Ok,g8|.H@`IIelb">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="I)T|tIxD[SP@qn8S!Ca|">
+                        <field name="VAR" id="e6*(h^`0A4s36;`zgqw~">relay</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="NFT7D+77}CFp1Q.|Zs#-">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="S32rw{rTEy{n}QN$]7jm">
+                <field name="VAR" id="e6*(h^`0A4s36;`zgqw~">relay</field>
+                <value name="VALUE">
+                  <block type="math_number" id="SZE2kvUH(2z-O]TzidUH">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="mpython_bluebit_set_true" id="vmX0y!`5e^j92B+|]EPV">
+                    <field name="set_digital_senor">RELAY</field>
+                    <value name="set_digital_P">
+                      <shadow type="set_digital" id="JZ#+/dHiryd,]75%XiN6">
+                        <field name="set_digital">8</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="text_print" id="jVjr43oU,4kF{1SRw-T4">
+                        <value name="TEXT">
+                          <shadow type="text" id="*EkJ?=oI_f11!1rbu4S%">
+                            <field name="TEXT">浇水</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="mpython_clear_dispchar_5lines" id="Iv26%!@6?H+Pc7S?_laK">
+                            <value name="DispChar_5lines">
+                              <shadow type="mpython_4_lines" id="m+50`}^FFF6:UR!hpRoP">
+                                <field name="mpython_4_lines">4</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="mpython_display_DispChar_5lines" id="TNxDHKprBf~GJezD/Ir7">
+                                <field name="TEXTMODE">1</field>
+                                <field name="AUTORETURN">False</field>
+                                <value name="DispChar_5lines">
+                                  <shadow type="mpython_4_lines" id=")OEs=~JH;|O)(x!8H4/w">
+                                    <field name="mpython_4_lines">4</field>
+                                  </shadow>
+                                </value>
+                                <value name="message">
+                                  <shadow type="text" id="VNH8q^nvFa2P=#Xv/2bp">
+                                    <field name="TEXT">指令浇水</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="mpython_display_Show" id="_Ki!p|0KIfnc~oKI54JS">
+                                    <next>
+                                      <block type="mpython_sleep_ms" id="s=inYWE+$ta{3X8s*^wc">
+                                        <field name="ms_us">s</field>
+                                        <value name="duration">
+                                          <shadow type="math_number" id="wYx},jXS[[2`$_|u7U!V">
+                                            <field name="NUM">5</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="mpython_clear_dispchar_5lines" id="[tse!b719:xy,S(VbyV3">
+                                            <value name="DispChar_5lines">
+                                              <shadow type="mpython_4_lines" id="`sib9Si2pXSz92g9aLa_">
+                                                <field name="mpython_4_lines">4</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="mpython_display_Show" id=".6t/L8ye$)yfRE4JnlD[">
+                                                <next>
+                                                  <block type="mpython_bluebit_set_false" id="bNu#OOa;U*!^0i-3EEMw">
+                                                    <field name="set_digital_senor">RELAY</field>
+                                                    <value name="set_digital_P">
+                                                      <shadow type="set_digital" id="VY-3+g)(jKM?5hm:B!]%">
+                                                        <field name="set_digital">8</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <next>
+                                                      <block type="variables_set" id="}4JM1/h5oYpb2PBifdKd">
+                                                        <field name="VAR" id="e6*(h^`0A4s36;`zgqw~">relay</field>
+                                                        <value name="VALUE">
+                                                          <block type="math_number" id="B+*6ygK2c8Fq{i~q`*:i">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_siot_receive" id=":WZ4j`BqE#5yGuw~I,xM" x="637" y="663">
+    <field name="TOPIC">4</field>
+    <statement name="DO">
+      <block type="variables_set" id="d2UdjK/$Xdy8O`_ALsYS">
+        <field name="VAR" id="vtBqs(W=-@.}k=hI8Fwc">a</field>
+        <value name="VALUE">
+          <block type="mpython_siot_message" id="zE-)QLp8c1wctJ#[s7!!"></block>
+        </value>
+        <next>
+          <block type="controls_if" id="]yhP%adSsR!0{{gvakvY">
+            <value name="IF0">
+              <block type="logic_compare" id="*sla;CyXV5A[lkGz5RYw">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="+b-cYSaW0X@tc)vI%jO4">
+                    <field name="VAR" id="vtBqs(W=-@.}k=hI8Fwc">a</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="A4wwFMQDQ*7=G8BuH6xV">
+                    <field name="TEXT">ip</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="mpython_siot_publish" id="[4tW05$yv:~XpJ!:$^Jj">
+                <field name="TOPIC">4</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="qNgrLGyKykL_V+#Ua:|z">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="mpython_WiFi_config" id="]DEOdx9f=C]~WDki6sp9">
+                    <field name="WiFi_config">0</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="mpython_clear_dispchar_5lines" id="ut0PJJ//@}=jh?8G}5=I">
+                <value name="DispChar_5lines">
+                  <shadow type="mpython_4_lines" id="YvVsRYelqw}eI%-lt|w#">
+                    <field name="mpython_4_lines">3</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="mpython_display_DispChar_5lines" id="s43Tdcao^b/bu{Nt+}cs">
+                    <field name="TEXTMODE">1</field>
+                    <field name="AUTORETURN">False</field>
+                    <value name="DispChar_5lines">
+                      <shadow type="mpython_4_lines" id="*BQ-8{jj,4EKW?){/e~W">
+                        <field name="mpython_4_lines">3</field>
+                      </shadow>
+                    </value>
+                    <value name="message">
+                      <shadow type="text" id=".5F#AX1a9!jl0,+*-%B[">
+                        <field name="TEXT">Hello, world!</field>
+                      </shadow>
+                      <block type="variables_get" id="#mOh=cU=7#]#SLyw(6U=">
+                        <field name="VAR" id="vtBqs(W=-@.}k=hI8Fwc">a</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="mpython_display_Show" id="4)@]0`S6bY.NL_x*pg%w"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mpython_define_thread" id=".H#C6^55xtqc0i.H(R({" x="212" y="1038">
+    <field name="THREAD">1</field>
+    <statement name="DO">
+      <block type="controls_repeat_forever" id=")%BW[U:kUc|pu+OSY[1Z">
+        <statement name="DO">
+          <block type="math_change" id="2.5y0uAi9L9`/c-CHi/S">
+            <field name="VAR" id="2j6l@@u;Sy3zUR4RaI9R">cnt</field>
+            <value name="DELTA">
+              <shadow type="math_number" id="jdJ;lRGehZmF!.;lBb,a">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="mpython_siot_publish" id="q/;6D-j}tQZ?7e+WbgV}">
+                <field name="TOPIC">1</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="F*d#woDO,K+;DU]LVD0b">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="text_join" id="ij8iFZkSEiYXkPuP]KrB">
+                    <mutation items="1"></mutation>
+                    <value name="ADD0">
+                      <block type="math_division_consult" id="6M^1tDRzWNUZ;O#$l],o">
+                        <value name="DIVIDEND">
+                          <shadow type="math_number" id="t,wLV9bus5j3}uOf?Pc_">
+                            <field name="NUM">64</field>
+                          </shadow>
+                          <block type="mpython_read_analog" id="tz/6SkCX7RKEbIW,NZxW">
+                            <value name="allPin">
+                              <shadow type="read_analog_pin" id="t#FrgCZx(yU{)4Qnj:?I">
+                                <field name="read_analog_pin">0</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="DIVISOR">
+                          <shadow type="math_number" id="?#K6zLI#gXg!B8f`oN:c">
+                            <field name="NUM">4</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="mpython_sleep_ms" id="?kSHMq,ta_#n3NhVa|.U">
+                    <field name="ms_us">s</field>
+                    <value name="duration">
+                      <shadow type="math_number" id="x2e9~zC,pD2nb3}3db0Z">
+                        <field name="NUM">0.1</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="mpython_siot_publish" id="Pe=~$bwVfElw]==QpiIJ">
+                        <field name="TOPIC">2</field>
+                        <value name="MESSAGE">
+                          <shadow type="text" id="2o.j)LqnXvQOgu|Z!tn1">
+                            <field name="TEXT"></field>
+                          </shadow>
+                          <block type="text_join" id=".ATPdI--NGH+xHJ2W3M2">
+                            <mutation items="1"></mutation>
+                            <value name="ADD0">
+                              <block type="math_division_consult" id="^+};Nzp:[CNZR]%0h~`X">
+                                <value name="DIVIDEND">
+                                  <shadow type="math_number">
+                                    <field name="NUM">64</field>
+                                  </shadow>
+                                  <block type="mpython_read_analog" id="Z0^CkpMUIA29AXlXXMT$">
+                                    <value name="allPin">
+                                      <shadow type="read_analog_pin" id="4n`(d7+GEu:DSc{C}=1U">
+                                        <field name="read_analog_pin">1</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="DIVISOR">
+                                  <shadow type="math_number" id="Tv?Ow3B!NCq;dh-9]f;M">
+                                    <field name="NUM">4</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="mpython_clear_dispchar_5lines" id="?%3uUm9/f8%=9mp|l-eH">
+                            <value name="DispChar_5lines">
+                              <shadow type="mpython_4_lines" id="Ri?5:HNnKU8`qjLBl;9|">
+                                <field name="mpython_4_lines">4</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="mpython_display_DispChar_5lines" id="}I?u:MC.Wah.p+FN4q`c">
+                                <field name="TEXTMODE">1</field>
+                                <field name="AUTORETURN">False</field>
+                                <value name="DispChar_5lines">
+                                  <shadow type="mpython_4_lines" id="!=7~DEuV%G8`R8O+Ll?;">
+                                    <field name="mpython_4_lines">4</field>
+                                  </shadow>
+                                </value>
+                                <value name="message">
+                                  <shadow type="text" id="CcPAk:if=zuXhIm.Q^;-">
+                                    <field name="TEXT">发送数据</field>
+                                  </shadow>
+                                  <block type="text_append_text" id="Cq9=,-M#L|aT)#A{-m2o">
+                                    <value name="text_abc">
+                                      <shadow type="text" id="RP;BJZ9%$Tju~zs)^?E8">
+                                        <field name="TEXT">发送数据</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="append_text">
+                                      <shadow type="text" id="LQa,BUUKQK}dF4@.|_kp">
+                                        <field name="TEXT">def</field>
+                                      </shadow>
+                                      <block type="text_join" id="b-xbxsLGKUdpj9pD-U,K">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                          <block type="variables_get" id="uGCz]jO4`H`7kE(D|eHJ">
+                                            <field name="VAR" id="2j6l@@u;Sy3zUR4RaI9R">cnt</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="mpython_display_Show" id="2bCX/u:IV/(ncJCf8zH)">
+                                    <next>
+                                      <block type="mpython_sleep_ms" id="9S0hxd?bB3m^UUS2:nsw">
+                                        <field name="ms_us">s</field>
+                                        <value name="duration">
+                                          <shadow type="math_number" id="z^]e^o(mz6g9uHwTm-_N">
+                                            <field name="NUM">60</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
