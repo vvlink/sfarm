@@ -10,7 +10,7 @@ IOT_UserName ='scope'        #用户名
 IOT_PassWord ='scope'     #密码
 
 # 定义项目名称和数据阈值，不同的项目可以设置不同的阈值
-project_dict={'af01':500,'af02':'500','af03':500,'af88':600}
+project_dict={'sf01':500,'sf02':'500'\n'sf03':500\n'sf88':600}
 
 # 设备名称，前面是要订阅的设备（传感器），后面是要控制的设备（电磁阀）
 topic_list= ['a1','d2'] 
