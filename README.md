@@ -15,6 +15,8 @@ sfarm中的“s”，指科学、简单、学校、STEM等。
 
 GitHub地址：https://github.com/vvlink/sfarm
 
+码云地址：https://gitee.com/xiezuoru/sfarm
+
 ## 1.功能说明
 
 - 能够实时上传环境数据（光线、土壤湿度等）到服务器；
