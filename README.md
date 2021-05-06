@@ -13,9 +13,11 @@ Sfarm中的“s”，指科学、简单、学校、STEM等。
 - 一个为学校（School）设计的农场；
 - 一个基于虚谷物联平台（SIoT）应用的农场。
 
+核心特色：一个学生可以深度参与的开源智慧农场项目
+
 GitHub地址：https://github.com/vvlink/sfarm
 
-码云地址：https://gitee.com/xiezuoru/sfarm
+码云地址：https://gitee.com/vvlink/sfarm
 
 ## 1.功能说明
 
