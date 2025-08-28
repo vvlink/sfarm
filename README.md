@@ -76,10 +76,10 @@ GitHub地址：https://github.com/vvlink/sfarm
 
 ## 4. 项目发起、维护人员
 
-- 谢作如（浙江省温州中学）
+- 谢作如（温州科技高级中学）
 - 夏青（上海蘑菇云）
 - 钱旭鸯（杭州师范大学）
-- 林屹立（温州博识创客STAEM公园）
+- 林淼焱（温州科技高级中学）
 - 卢华军（福州连江五中）
 - ……
 
@@ -89,7 +89,7 @@ GitHub地址：https://github.com/vvlink/sfarm
 
 https://siot.readthedocs.io/
 
-2）虚谷号使用文档
+2）XEdu使用文档
 
-https://vvboard.readthedocs.io/
+https://xedu.readthedocs.io/
 
